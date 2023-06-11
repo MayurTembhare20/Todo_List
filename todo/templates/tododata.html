@@ -1,0 +1,48 @@
+{% if it.check_status %}
+
+<li>
+    <div class="main">
+        <div class="inl  ">
+            <a href="{% url 'uncross' it.id %}" id="mrk">
+                <input type="checkbox" id="ch hh" class="ch " name="hh" checked> </a>
+
+            <label id="lb  " style="text-decoration: line-through; text-decoration-style:solid;
+             text-decoration-color: blue; " for="hh">{{it.title}}</label>
+        </div>
+
+        <div class="gg">
+            <a href="{% url 'uncross' it.id %}" id="mrk"> Unmark
+
+                <!-- <button >mark</button> -->
+            </a>
+            <a href="{% url 'delete' it.id %}">
+                <button>X</button>
+            </a>
+        </div>
+    </div>
+</li>
+
+{% else %}
+<li>
+    <div class="main">
+        <div class="inl">
+            <a href="{% url 'uncross' it.id %}" id="mrk">
+                <input type="checkbox" class="ch"></a>
+            <label id="lb">{{it.title}}</label>
+
+        </div>
+
+        <div class="gg">
+            <a href="{% url 'update' it.id %}" id="mrk">Mark
+
+                <!-- <button >mark</button> -->
+            </a>
+            <a href="{% url 'delete' it.id %}">
+                <button>X</button>
+            </a>
+        </div>
+
+
+    </div>
+</li>
+{% endif %}
